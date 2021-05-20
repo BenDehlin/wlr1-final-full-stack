@@ -7,7 +7,7 @@ import {setCart} from './redux/cartReducer'
 import {useDispatch} from 'react-redux'
 import axios from 'axios'
 
-function App(props) {
+function App() {
   const dispatch = useDispatch()
   useEffect(() => {
     axios.get('/auth/me').then(res => {
