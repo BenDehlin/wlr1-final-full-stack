@@ -6,21 +6,18 @@ import {setUser} from './redux/authReducer'
 import {setCart} from './redux/cartReducer'
 import {useDispatch} from 'react-redux'
 import axios from 'axios'
-import {withRouter} from 'react-router-dom'
 
 function App(props) {
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   axios.get('/auth/me').then(res => {
-  //     dispatch(setUser(res.data.user))
-  //     dispatch(setCart(res.data.cart))
-  //   }).catch((err) => {
-  //     console.log(err)
-  //     // if(err.response.status === 511){
-  //     //   props.history.push('/auth')
-  //     // }
-  //   })
-  // }, [])
+  const dispatch = useDispatch()
+  useEffect(() => {
+    axios.get('/auth/me').then(res => {
+      console.log(res.data)
+      dispatch(setUser(res.data.user))
+      dispatch(setCart(res.data.cart))
+    }).catch((err) => {
+      console.log(err.response)
+    })
+  }, [])
   return (
     <div className="App">
       <Header />
@@ -29,4 +26,4 @@ function App(props) {
   );
 }
 
-export default withRouter(App);
+export default App
