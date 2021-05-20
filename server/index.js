@@ -47,6 +47,7 @@ massive({
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.get('/auth/logout', authCtrl.logout)
+// app.get('/auth/me', authCtrl.getUser)
 
 // PRODUCTS
 app.get('/api/products', productCtrl.getProducts)
@@ -54,3 +55,5 @@ app.get('/api/products', productCtrl.getProducts)
 // CART
 app.get('/api/cart', cartCtrl.getCart)
 app.post('/api/cart/:product_id', cartCtrl.addToCart)
+app.delete('/api/cart/:product_id', cartCtrl.deleteItemFromCart)
+app.put('/api/cart/:product_id', cartCtrl.changeCartQty)
