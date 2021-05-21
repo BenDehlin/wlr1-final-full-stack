@@ -1,3 +1,7 @@
+// Here in the Header we've brought in Link from react-router-dom
+// so that we can link to the various pages of our application.
+// Before we look at any given route let's go look at how we structured
+// redux. To start let's look at ../redux/authReducer
 import {Link} from 'react-router-dom'
 
 const Header = () => {

@@ -1,3 +1,13 @@
+// The notes on this file will be a bit light because we've
+// set up our authController pretty similar to most other authControllers
+// we've done but there is 1 main difference. After we register a user
+// we create a cart for that user and attach the cart_id to our user on
+// the session. Additionally when a user logs in we grab their existing
+// cart out of the database so we can put their cart_id on the session after
+// logging in.
+// The files we're using that we haven't used before are ../../db/cart/create_cart
+// and ../../db/cart/get_cart if you would like to see those queries.
+
 const bcrypt = require('bcryptjs')
 
 module.exports = {

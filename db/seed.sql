@@ -1,3 +1,12 @@
+-- Here we've set up 4 tables, 1 for users, 1 for products
+-- 1 for a cart and 1 junction table establish the relationship between
+-- a cart and a product so we can "put items into a cart". Setting up
+-- our tables like this will allow us to mark a cart inactive when someone
+-- checks out instead of deleting the table. This will allow us to preserve
+-- order history if that is something we care about.
+-- Look through these tables to see how we've structured things and then start
+-- looking at our ../server/index.js to start following the dataflow.
+
 DROP TABLE IF EXISTS wlr1_product_cart_junction;
 DROP TABLE IF EXISTS wlr1_carts;
 DROP TABLE IF EXISTS wlr1_products;

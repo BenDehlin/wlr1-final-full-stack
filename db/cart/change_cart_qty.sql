@@ -1,3 +1,7 @@
+-- Here we want to update a given product in a given cart
+-- to have a new quantity. Afterwards we send back the updated
+-- cart information.
+
 UPDATE wlr1_product_cart_junction
 SET quantity = $3
 WHERE cart_id = $1 AND product_id = $2;
